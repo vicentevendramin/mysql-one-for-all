@@ -13,7 +13,7 @@ CREATE TABLE SpotifyClone.users(
     user_name VARCHAR(100) NOT NULL,
     user_age INT NOT NULL,
     plan_id INT NOT NULL,
-    signature_date DATE,
+    signature_date DATE NOT NULL,
     FOREIGN KEY (plan_id) REFERENCES SpotifyClone.plans(plan_id)
 ) engine = InnoDB;
 
@@ -62,18 +62,18 @@ VALUES
   ('pessoal', 6.99),
   ('familiar', 7.99);
 
-INSERT INTO SpotifyClone.users(user_name, user_age, plan_id)
+INSERT INTO SpotifyClone.users(user_name, user_age, plan_id, signature_date)
 VALUES
-  ('Barbara Liskov', 82, 1),
-  ('Robert Cecil Martin', 58, 1),
-  ('Ada Lovelace', 37, 4),
-  ('Martin Fowler', 46, 4),
-  ('Sandi Metz', 58, 4),
-  ('Paulo Freire', 19, 2),
-  ('Bell Hooks', 26, 2),
-  ('Christopher Alexander', 85, 3),
-  ('Judith Butler', 45, 3),
-  ('Jorge Amado', 58, 3);
+  ('Barbara Liskov', 82, 1, '2019-10-20'),
+  ('Robert Cecil Martin', 58, 1, '2017-01-06'),
+  ('Ada Lovelace', 37, 4, '2017-12-30'),
+  ('Martin Fowler', 46, 4, '2017-01-17'),
+  ('Sandi Metz', 58, 4, '2018-04-29'),
+  ('Paulo Freire', 19, 2, '2018-02-14'),
+  ('Bell Hooks', 26, 2, '2018-01-05'),
+  ('Christopher Alexander', 85, 3, '2019-06-05'),
+  ('Judith Butler', 45, 3, '2020-05-13'),
+  ('Jorge Amado', 58, 3, '2017-02-17');
 
 INSERT INTO SpotifyClone.artists(artist_name)
 VALUES
